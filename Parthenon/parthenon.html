@@ -1,0 +1,83 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>Parthenon</title>
+<body style="background-color:lightgray;">
+<h1>Parthenon</h1>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute vec4 vPosition;
+attribute vec4 vColor;
+varying vec4 fColor;
+
+uniform mat4 modelView;
+uniform mat4 projection;
+
+void main()
+{
+    gl_Position = projection * modelView * vPosition;
+    fColor = vColor;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+varying vec4 fColor;
+
+void main()
+{
+    gl_FragColor = fColor;
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="parthenon.js"></script>
+
+
+
+
+
+
+
+
+<body>
+<canvas id="gl-canvas" width="550" height="550">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+
+<br/>
+
+
+<h4> Controls </h4>
+<p> "F" - fly down </p>
+<p> "R" - fly down </p>
+<p> "E" - rotate right around spawn point </p>
+<p> "Q" - rotate left around spawn point </p>
+<p> "A" - move left </p>
+<p> "D" - move right </p>
+<p> "W" - move forward </p>
+<p> "S" - move backwards </p>
+<p> "CTRL + R" - reload </p>
+<p> IMPORTANT: you are rotating around the center of the map which is where you started,<br> that means you may get lost when you are rotating around, if that hapens reload to regain composure</p>
+
+<h4> Files With More Informaton </h4>
+<a href="Non-Expert How-To Documentation.pdf"> How To Documentation </a> <br>
+<a href="Lesson to accompany Parthenon.pdf"> Lesson </a> <br>
+<a href="Cultural Context.pdf"> Cultural Context </a> <br>
+<a href="Final Project Bibliography.pdf"> References </a> <br>
+<br>
+<br>
+<br>
+
+
+
+
+</body>
+</body>
+</html>
